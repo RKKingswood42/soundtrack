@@ -1,28 +1,37 @@
  <!DOCTYPE html>
  <html>
-     <!I was having issues with my GitHub repo -- the terminal said it did exists, then that it didn't... it was a mess. I ended up having to start over, which fixed everything, but then, of course, I forgot to switch to a new branch *before* making the changes to the index. Hence this commit that doesn't really contain new material.>
      <head>
          <title>Bloc Jams</title>
+         <style>
+             @import url('https://fonts.googleapis.com/css?family=Caveat|Palanquin:200,300,400,500,600');
+         </style>
+         <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+         <link rel="stylesheet" type="text/css" href="styles/normalize.css">
+         <link rel="stylesheet" type ="text/css" href="styles/main.css">
      </head>
-     <body>
-         <nav>
+     <body class="landing">
+         <nav class = "navbar">
+             <img src="assets/images/soundtrack-logo.png" alt="soundtrack logo" class="logo">
          </nav>
-         <div class="hero"> 
-             <h1>soundtrack</h1>
-             <h3>Score your life right.</h3>
-         </div>
+         <section class="hero-content"> 
+             <h1 class="hero-title">your life has a soundtrack.</h1>
+             <h3 class="hero-subtitle">You deserve to pick the music.</h3>
+         </section>
          <div> 
-             <div>
-                 <h5>Your life, your music.</h5>
-                 <p>Pick the genre, artist, album, or specific song you want to hear, and press play. Couldn't be simpler.</p>
+             <div class="point">
+                 <span class="ion-music-note"></span>
+                 <h5 class= "point-title">Your life, your music.</h5>
+                 <p class="point-description">Pick the genre, artist, album, or specific song you want to hear, and press play. Couldn't be simpler.</p>
              </div>
-             <div>
-                 <h5>No ads, no limits.</h5>
-                 <p>Just your music, whenever you want it, wherever you want it.</p>
+             <div class="point">
+                 <span class="ion-radio-waves"></span>
+                 <h5 class="point-title">No ads, no limits.</h5>
+                 <p class="point-description">Just your music, whenever you want it, wherever you want it.</p>
              </div>
-             <div>
-                 <h5>Pick your device.</h5>
-                 <p>Desktop? Let's do it. Mobile? Go ahead. Tablets? Why not.</p>
+             <div class="point">
+                 <span class="ion-iphone"></span>
+                 <h5 class="point-title">Pick your device.</h5>
+                 <p class="point-description">Desktop? Let's do it. Mobile? Go ahead. Tablets? Why not.</p>
              </div>
          </div>
      </body>
