@@ -1,0 +1,61 @@
+body.landing {
+     background-image: url(../assets/images/use_your_illusion_@2X.png);
+ }
+
+.hero-content {
+     position: relative; 
+     min-height: 600px; 
+     background-image: url(../assets/images/record.jpg);
+     background-size: cover;
+ }
+
+.hero-content .hero-title {
+     position: absolute;         
+     top: 40%;                 
+     -webkit-transform: translateY(-50%);
+     -moz-transform: translateY(-50%);
+     -ms-transform: translateY(-50%);
+     transform: translateY(-50%);
+     width: 100%;                    
+     text-align: center;             
+     font-size: 4rem;                
+     font-weight: 300;             
+     text-transform: uppercase;              
+     text-shadow: 2px 2px 4px rgb(58,23,63); 
+ }
+
+.hero-content .hero-subtitle {
+    position: absolute;
+    top: 60%;
+    width: 100%;
+    text-align: center;
+    font-size: 2.5rem; 
+    font-weight: 200; 
+     text-shadow: 1px 1px 0px rgb(58,23,63);
+}
+
+ .selling-points {
+     position: relative;
+ }
+ 
+ .point {
+     position: relative;
+     padding: 3rem;
+     text-align: center;
+ }
+ 
+ .point .point-title {
+     font-size: 1.25rem;
+     font-weight: 200;
+ }
+
+.point .point-description {
+    font-weight: 100;
+}
+ 
+ .ion-music-note,
+ .ion-radio-waves,
+ .ion-iphone {
+     color: rgb(20, 220, 180);
+     font-size: 5rem;
+ }
