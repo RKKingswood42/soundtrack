@@ -61,7 +61,7 @@
      position: absolute;
      top: 0;
      right: 0;
-     height: 100px;
+     height: 132px;
      color: rgb(58,58,58);
      text-decoration: none;
  }
@@ -84,6 +84,11 @@
  
  .links-container .navbar-link:hover {
      color: rgb(20, 220, 180);
+ }
+
+.links-container .navbar-link:active {
+    color: rgb(20, 220, 180);
+    background-color: rgba(58,58,58, 1);    
  }
  
  .navbar .logo {
