@@ -1,0 +1,49 @@
+body.collection {
+     background-image: url(../assets/images/b:w-lights.jpg);
+     background-repeat: no-repeat;
+     background-attachment: fixed;
+     background-position: center center;
+     background-size: cover;
+ }
+ 
+ .album-covers {
+     position: relative;
+     padding: 15px;
+     background-color: rgba(8, 8, 8, 0.8);
+     background-size: cover;
+ }
+ 
+ .collection-album-container {
+     position: relative;
+     margin-top: 30px;
+     margin-bottom: 10px;
+     text-align: center;
+ }
+ 
+ .collection-album-container .caption {
+     margin-top: 10px;
+    
+ }
+ 
+ .collection-album-container .caption p {
+     font-size: 1rem;
+     font-weight: 300;
+     color: rgba(255, 255, 255, 0.6);
+     text-decoration: none;
+     text-align:center;
+ }
+ 
+ .collection-album-container .caption p a {
+     color: rgba(255, 255, 255, 0.6);
+     text-decoration: none;
+ }
+ 
+ .collection-album-container .caption p a.album-name {
+     color: rgba(20, 220, 180, 0.8);
+     text-decoration: none;
+ }
+ 
+ .collection-album-container img {
+     width: 80%;
+     
+ }
