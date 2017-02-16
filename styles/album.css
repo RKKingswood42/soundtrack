@@ -38,7 +38,7 @@
 
 .album-view-song-list {
      width: 90%;
-     margin: 1.5rem auto;
+     padding: 1.5rem auto;
      font-weight: 300;
      font-size: 0.75em;
      border-collapse: collapse;
@@ -81,8 +81,8 @@
  @media (max-width: 1024px) and (min-width: 320px) {
     .album-view-song-list {
          position: relative;
-         top: 1rem;
          width: 80%;
+         bottom: 0.33rem;
          margin: auto;
      }
  }
