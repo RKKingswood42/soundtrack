@@ -13,7 +13,22 @@ var albumPersistance = {
     ]
 };
 
-var albumJScribble = {
+var albumMoralDilemma = {
+    title: "Moral Dilemma",
+    artist: 'the Ethicists',
+    label: 'Ivory Tower',
+    year: '1995',
+    albumArtUrl: 'assets/images/album_covers/03.png',
+    songs: [
+        {title: 'Eudaimonia', duration: '1:20'},
+        {title: 'Categorical Imperative', duration: '13:09'},
+        {title: 'Satisfied Stoic', duration: '0:12'},
+        {title: 'Greatest Good, Greatest Number', duration: '2:55'},
+        {title: 'Everyone\'s a Murderer', duration: '4:21'}
+    ]
+};
+
+var albumHecticGlow = {
     title: "Semantic Underground",
     artist: 'the Hectic Glow',
     label: 'Nerdfighteria Inc.',
@@ -21,24 +36,24 @@ var albumJScribble = {
     albumArtUrl: 'assets/images/album_covers/02.png',
     songs: [
         {title: 'French the Llama', duration: '2:32'},
-        {title: 'Brandish', duration:'3:49'},
-        {title: 'Who is Hank?', duration:'0:12'},
-        {title: 'Complexly', duration:'2:55'},
-        {title: 'Liking Things', duration:'4:21'}
+        {title: 'Brandish', duration: '3:49'},
+        {title: 'Who is Hank?', duration: '0:12'},
+        {title: 'Complexly', duration: '2:55'},
+        {title: 'Liking Things', duration: '4:21'}
     ]
 };
 
- var createSongRow = function(songNumber, songName, songLength) {
-     var template = '<tr class="album-view-song-item">'
+
+ var createSongRow = function (songNumber, songName, songLength) {
+    var template = '<tr class="album-view-song-item">'
       + '  <td class="song-item-number">' + songNumber + '</td>'
       + '  <td class="song-item-title">' + songName + '</td>'
       + '  <td class="song-item-duration">' + songLength + '</td>'
-      + '</tr>'
-      ;
- 
+      + '</tr>';
+     
      return template;
  };
-
+var currentAlbum;
 var setCurrentAlbum = function(album) {
 
      var albumTitle = document.getElementsByClassName('album-view-title')[0];
@@ -58,8 +73,21 @@ var setCurrentAlbum = function(album) {
      for (var i = 0; i < album.songs.length; i++) {
          albumSongList.innerHTML += createSongRow(i + 1, album.songs[i].title, album.songs[i].duration);
      }
+     currentAlbum = albumTitle;
  };
  
  window.onload = function() {
      setCurrentAlbum(albumPersistance);
  };
+
+var waitForClick = document.getElementsByClassName('album-cover-art')[0].addEventListener('click', function() {
+    if (currentAlbum.innerHTML === 'Patriarchal Bullsh*t'){
+        setCurrentAlbum(albumHecticGlow);
+    }
+    else if (currentAlbum.innerHTML === 'Semantic Underground'){
+        setCurrentAlbum(albumMoralDilemma);
+    }
+    else {
+        setCurrentAlbum(albumPersistance);
+    }
+});
