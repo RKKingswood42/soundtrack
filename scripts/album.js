@@ -118,13 +118,19 @@ var waitForClick = document.getElementsByClassName('album-cover-art')[0].addEven
      }
 });
 
-//I tried writing the whole play/pause functionalities on my own (with very limited success) before I realized that there were more broken down instructions in the checkpoint. When I read them, I didn't understand what the point of the two functions was from the description, and I couldn't write a function if I didn't know what it was supposed to do. So I went ahead and looked at the solutions, which then made clear what they are doing, and *now* I understand the checkpoint well enough to have done it myself. So yes, these are copy/pasted, but if I need to do this again elsewhere, I totally can now. 
-
 var findParentByClassName = function(element, targetClass) {
     if (element) {
         var currentParent = element.parentElement;
         while (currentParent.className != targetClass && currentParent.className !== null) {
             currentParent = currentParent.parentElement;
+        }
+        if (currentParent === null){
+            console.log('This element has no parent.');
+            return;
+        }
+        else if (currentParent.className === null){
+            console.log('There is no parent element with this class');
+            return;
         }
         return currentParent;
     }
