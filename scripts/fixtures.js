@@ -5,11 +5,11 @@ var albumPersistance = {
     year: '2017',
     albumArtUrl: 'assets/images/album_covers/01.png',
     songs: [
-        {title: 'Nevertheless', duration: '7:42'},
-        {title: '(I won\'t) Stand Down', duration: '2:15'},
-        {title: 'Mr. Senator', duration: '5:29'},
-        {title: 'Anthem', duration: '3:54'},
-        {title: 'Discreet Indiscretion', duration: '4:12'}
+        {title: 'Nevertheless', duration: '7:42', audioUrl: 'assets/music/blue'},
+        {title: '(I won\'t) Stand Down', duration: '2:15', audioUrl: 'assets/music/green'},
+        {title: 'Mr. Senator', duration: '5:29', audioUrl: 'assets/music/red'},
+        {title: 'Anthem', duration: '3:54', audioUrl: 'assets/music/pink'},
+        {title: 'Discreet Indiscretion', duration: '4:12', audioUrl: 'assets/music/magenta'}
     ]
 };
 
