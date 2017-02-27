@@ -4,7 +4,7 @@
      left: 0;
      right: 0;
      height: 150px;
-     background-color: rgba(20, 220, 180, 0.8);
+     background-color: rgba(20, 220, 180, 0.6);
      z-index: 100;
  }
  
@@ -15,7 +15,7 @@
 
  .player-bar a,
  .player-bar a:hover {
-     color: white;
+     color: rgba (255, 255, 255, 0.7);
      cursor: pointer;
      text-decoration: none;
  }
@@ -46,6 +46,7 @@
      margin-right: 15%;
      font-size: 1.6rem;
  }
+
 
  .player-bar .currently-playing {
      width: 50%;
@@ -107,7 +108,7 @@
      background-color: white;
      left: 36%;
      top: 50%;
-     /* #1 */
+     
      margin-left: -0.25rem;
      margin-top: -0.25rem;
      border-radius: 50%;
