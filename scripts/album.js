@@ -4,7 +4,7 @@ var albums = [albumPersistance, albumMoralDilemma, albumHecticGlow];
      var template = '<tr class="album-view-song-item">'
       + '  <td class="song-item-number" data-song-number="' + songNumber + '">' + songNumber + '</td>'
       + '  <td class="song-item-title">' + songName + '</td>'
-      + '  <td class="song-item-duration">' + songLength + '</td>'
+      + '  <td class="song-item-duration">' + filterTimeCode(songLength) + '</td>'
       + '</tr>';
      
      var $row = $(template);
@@ -85,15 +85,17 @@ var setCurrentAlbum = function(album) {
      }
  };
 
- var updateSeekBarWhileSongPlays = function() {
+ var updateSeekBarWhileSongPlays = function() {   
      if (currentSoundFile) {
          currentSoundFile.bind('timeupdate', function(event) {
              var seekBarFillRatio = this.getTime() / this.getDuration();
              var $seekBar = $('.seek-control .seek-bar');
- 
              updateSeekPercentage($seekBar, seekBarFillRatio);
+             setCurrentTimeInPlayerBar(this.getTime());
          });
      }
+     
+     
  };
 
  var updateSeekPercentage = function($seekBar, seekBarFillRatio) {
@@ -150,6 +152,7 @@ var updatePlayerBarSong = function() {
     $('.currently-playing .artist-name').text(currentAlbum.artist);
     $('.currently-playing .artist-song-mobile').text(currentSongFromAlbum.title + " - " + currentAlbum.artist);
     $('.main-controls .play-pause').html(playerBarPauseButton);
+    setTotalTimeInPlayerBar(currentSongFromAlbum.duration);
 }; 
 
 var trackIndex = function(album, song) {
@@ -179,6 +182,23 @@ var nextSong = function(){
     $nextSongCell.html(pauseButtonTemplate);
     $lastPlayedSongCell.html(lastPlayedSong);
     
+};
+
+var filterTimeCode = function(timeInSeconds){
+    var minutes = Math.floor(timeInSeconds/60);
+    var seconds = Math.floor(timeInSeconds % 60);
+    if (seconds <= 9){
+        seconds = "0"+seconds;
+    }
+    return minutes + ":" + seconds;
+};
+
+var setCurrentTimeInPlayerBar = function(currentTime){
+         $('.current-time').html(filterTimeCode(currentTime));
+     };
+
+var setTotalTimeInPlayerBar = function(totalTime){
+        $('.total-time').html(filterTimeCode(totalTime));
 };
 
 var previousSong = function(){
@@ -223,9 +243,7 @@ var setSong = function(songNumber){
          currentSoundFile.stop();
      }
     currentlyPlayingSongNumber = parseInt(songNumber);
-    console.log('cpsn: ', currentlyPlayingSongNumber);
     currentSongFromAlbum = currentAlbum.songs[currentlyPlayingSongNumber-1];
-    console.log('csfa: ',currentSongFromAlbum);
     currentSoundFile = new buzz.sound(currentSongFromAlbum.audioUrl, {
          formats: [ 'mp3' ],
          preload: true
@@ -253,6 +271,8 @@ var playButtonTemplate = '<a class="album-song-button" id="play"><span class="io
 var pauseButtonTemplate = '<a class="album-song-button" id="paused"><span class="ion-pause"></span></a>';
 var playerBarPlayButton = '<span class="ion-play"></span>';
 var playerBarPauseButton = '<span class="ion-pause"></span>';
+var playerBarTimePlayed = '<div class = "seek-control" id="current-time"></span>';
+var playerBarTimeLeft = '<div class = "seek-control" id="total-time"></span>';
 
 var currentlyPlayingSongNumber = null;
 var currentSongFromAlbum = null;
