@@ -39,7 +39,7 @@
 
 .album-view-song-list {
      width: 90%;
-     padding: 1.5rem auto;
+     margin: 1.5rem auto;
      font-weight: 300;
      font-size: 0.75em;
      border-collapse: collapse;
