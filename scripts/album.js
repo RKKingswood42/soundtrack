@@ -291,9 +291,9 @@ var setVolume = function(volume) {
     volume=Math.max(0, volume);
     volume=Math.min(100, volume);
     
-    currentVolume=volume;
+    currentVolume = volume;
      if (currentSoundFile) {
-         currentSoundFile.setVolume(volume*100);
+         currentSoundFile.setVolume(currentVolume);
      }
  };
 
@@ -321,8 +321,6 @@ var $nextButton = $('.main-controls .next');
 $(document).ready(function() {
     setCurrentAlbum(albumPersistance); 
     setupSeekBars();
-    updateSeekBarWhileSongPlays();
-    setVolume(currentVolume);
     $nextButton.click(nextSong);
     $playPauseButton.click(togglePlayFromPlayerBar);
     $previousButton.click(previousSong);
