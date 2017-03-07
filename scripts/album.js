@@ -252,20 +252,20 @@ var togglePlayFromPlayerBar = function(){
       setSong(1);
       currentSoundFile.play();
       getSongNumberCell(currentlyPlayingSongNumber).html(pauseButtonTemplate);
-      $playPauseButton.html(pauseButtonTemplate);
+      $playPauseButton.html(playerBarPauseButton);
       updatePlayerBarSong();
       updateSeekBarWhileSongPlays();
       
   } else if (currentSoundFile.isPaused()){
       currentSoundFile.play();
       getSongNumberCell(currentlyPlayingSongNumber).html(pauseButtonTemplate);
-      $playPauseButton.html(pauseButtonTemplate);
+      $playPauseButton.html(playerBarPauseButton);
       updateSeekBarWhileSongPlays();
       
   } else {
       currentSoundFile.pause();
       getSongNumberCell(currentlyPlayingSongNumber).html(playButtonTemplate);
-      $playPauseButton.html(playButtonTemplate);
+      $playPauseButton.html(playerBarPlayButton);
   }
 };
 
